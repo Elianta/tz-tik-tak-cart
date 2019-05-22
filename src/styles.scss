@@ -1,0 +1,14 @@
+@import 'styles/root.scss';
+@import 'styles/mixins.scss';
+@import 'styles/normalize.scss';
+@import 'styles/common.scss';
+@import 'styles/main.scss';
+@import 'styles/components/all.scss';
+
+.container {
+    min-width: 280px;
+    width: 84%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}

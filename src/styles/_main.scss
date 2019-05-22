@@ -1,0 +1,42 @@
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-width: 320px;
+}
+
+.page-header {
+    flex-shrink: 0;
+}
+.page-content {
+    flex: 1 0 auto;
+}
+.page-footer {
+    flex-shrink: 0;
+}
+
+.page-title {
+    font-size: 38px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: $accent;
+}
+
+.page-title-medium {
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: $accent;
+}

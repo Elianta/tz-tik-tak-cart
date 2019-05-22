@@ -1,0 +1,45 @@
+.checkout {
+    padding: 13px 20px 25px;
+    font-size: 14px;
+    border-radius: 3px;
+    background: $light;
+}
+
+.checkout__title {
+    margin-bottom: 13px;
+}
+
+.checkout__radio-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+}
+
+.checkout__radio {
+    margin-right: 15px;
+}
+
+.checkout__block {
+    padding: 17px 0 18px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.checkout__input {
+    margin-bottom: 11px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.checkout__footer {
+    padding: 17px 0 16px;
+    line-height: calc(20/14);
+}
+
+.checkout__total {
+    display: block;
+    margin-top: 5px;
+    font-size: 22px;
+    font-weight: 400;
+    color: $accent;
+}

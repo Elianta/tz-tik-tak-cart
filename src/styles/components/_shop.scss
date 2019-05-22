@@ -1,0 +1,30 @@
+.shop {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0 20px;
+}
+
+.shop__img {
+    margin-top: 3px;
+    flex-shrink: 0;
+    border: 1px solid #dcdcdc;
+}
+
+.shop__content {
+    padding-left: 12px;
+}
+
+.shop__desc {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    & > p {
+        padding-left: 3px;
+    }
+}
+
+.shop__name {
+    a {
+        color: $accent;
+    }
+}

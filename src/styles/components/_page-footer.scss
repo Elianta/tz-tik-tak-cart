@@ -1,0 +1,117 @@
+.page-footer {
+    display: block;
+}
+
+.page-footer__top {
+    display: flex;
+    padding: 42px 0 17px;
+    background: #f4f4f4;
+    @include r($l-mobile) {
+        padding-bottom: 0;
+    }
+}
+
+.page-footer__bottom {
+    padding: 17px 0 18px;
+    font-size: 14px;
+    line-height: 1.43;
+    color: $main-light;
+    @include r($l-mobile) {
+        background: #f4f4f4;
+    }
+    .page-footer__row {
+        align-items: center;
+    }
+}
+
+.page-footer__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.page-footer__block {
+    width: 25%;
+    padding-right: 20px;
+    margin-bottom: 30px;
+    @include r($tablet) {
+        width: 50%;
+    }
+    @include r($l-mobile) {
+        width: 100%;
+        padding-right: 0;
+    }
+}
+
+.page-footer__social-block {
+    @include r($l-mobile) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-top: 1px solid #d3d3d3;
+        border-bottom: 1px solid #d3d3d3;
+    }
+}
+
+.page-footer__social {
+    margin-top: 15px;
+}
+
+.page-footer__copy {
+    margin-right: auto;
+}
+
+.page-footer__logo {
+    display: flex;
+    width: 52px;
+    height: 25px;
+    margin-left: 5px;
+    & > svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.page-footer__title {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 400;
+    color: $accent;
+}
+
+.page-footer__list {
+    li > a {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+        color: $accent;
+        transition: color 0.25s ease-out;
+        &:hover {
+            color: $decor;
+        }
+    }
+}
+
+.page-footer__contact {
+    display: flex;
+    padding: 5px 0;
+    color: $accent;
+    white-space: nowrap;
+    a {
+        padding-left: 5px;
+        color: $accent;
+    }
+}
+
+.page-footer__dev {
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+    @include r($mobile) {
+        order: -1;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    & > a {
+        margin-left: 5px;
+    }
+}

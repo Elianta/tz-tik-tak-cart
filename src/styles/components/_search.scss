@@ -1,0 +1,20 @@
+.search {
+    position: relative;
+    width: 100%;
+}
+
+.search__input {
+    padding-right: 48px;
+}
+
+.search__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 100%;
+    & > img {
+        width: 18px;
+        height: 18px;
+    }
+}

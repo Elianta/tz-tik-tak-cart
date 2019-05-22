@@ -1,0 +1,114 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5,
+h6, p, blockquote, pre, a, abbr, acronym, address, big,
+cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+img, fieldset, a img {
+    border: none;
+}
+
+input[type="submit"], button {
+    background-color: transparent;
+    cursor: pointer;
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+//hide icons autofilling safari
+input::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
+
+input, button, select {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border: none;
+    border-radius: 0;
+}
+
+input, textarea, select, button {
+    outline: none;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+a {
+    color: $main;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    &:hover {
+        color: $decor;
+        transition: color 0.25s ease;
+    }
+    &:focus:hover {
+        outline: none;
+    }
+    &:focus:not(:hover) {
+        outline: 2px solid rgba($decor, 0.7);
+        outline-offset: 2px;
+    }
+    &:active {
+        color: darken($decor, 20%);
+        outline: none;
+        transition: color 0.25s ease;
+    }
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+    -webkit-overflow-scrolling: touch;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    font-size: 16px;
+    line-height: 1.2;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    color: $main;
+}

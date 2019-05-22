@@ -1,0 +1,29 @@
+.social {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.social__item {
+    width: 42px;
+    height: 42px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    overflow: hidden;
+    & a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 12px;
+        background: #949494;
+        transition: background 0.25s ease-out;
+        &:hover {
+            background: $decor;
+        }
+    }
+    & img {
+        max-height: 100%;
+    }
+}
