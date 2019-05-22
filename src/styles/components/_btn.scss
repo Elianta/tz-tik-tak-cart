@@ -18,6 +18,10 @@
             background: $accent;
         }
     }
+    &:disabled {
+        cursor: default;
+        background: $line;
+    }
     &--full {
         width: 100%;
     }
@@ -87,6 +91,11 @@
         &:hover {
             background: darken($decor-light, 5%);
             transition: background 0.3s ease-out;
+        }
+        &:disabled {
+            cursor: default;
+            background: $line;
+            box-shadow: 0 1px 1px rgba(0, 1, 1, 0.17), inset 0 -2px 0 rgba(darken($line, 15%), 0.75);
         }
     }
     &--narrow {

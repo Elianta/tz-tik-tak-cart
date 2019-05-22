@@ -10,17 +10,21 @@ class Checkout extends React.Component {
             payment: 'cash',
             deliveryCost: 0,
             deliveryString: '',
+            isMinSumReached: false,
             isDeliveryFree: false
         };
     }
 
     componentDidMount() {
         this._updateDeliveryData();
+        this._checkMinSum();
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps, prevState) {
         if(this.props.price !== prevProps.price) {
             this._updateDeliveryData();
+            this._checkMinSum();
+        }
         if (this.state.isDeliveryFree !== prevState.isDeliveryFree) {
             this._updateDeliveryData();
         }
@@ -51,6 +55,17 @@ class Checkout extends React.Component {
         });
 
     }
+
+    _checkMinSum() {
+        const shopsWithMinSum = this.props.shops.filter((shop) => {
+            return shop.productsPrice >= shop.info.sumMin;
+        });
+        const isMinSumReached = shopsWithMinSum.length === this.props.shops.length;
+        this.setState({
+            isMinSumReached
+        });
+    }
+
     _updateDeliveryData() {
         const isDeliveryFree = this.state.isDeliveryFree;
         let deliveryCost = this.props.shops.reduce((acc, shop) => {
@@ -97,7 +112,7 @@ class Checkout extends React.Component {
                 </div>
 
 
-                <button type="submit" className="btn btn--decor btn--full">Заказать</button>
+                <button type="submit" className="btn btn--decor btn--full" disabled={!this.state.isMinSumReached}>Заказать</button>
             </form>
         );
     }
