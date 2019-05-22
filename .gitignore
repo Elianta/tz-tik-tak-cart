@@ -1,7 +1,8 @@
 .idea
 node_modules
 *.log
-# *bundle.js
-# *bundle.js.map
-# *styles.css
-# *styles.css.map
+*bundle.js
+*bundle.js.map
+*styles.css
+*styles.css.map
+package-lock.json
