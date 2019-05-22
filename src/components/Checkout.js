@@ -9,7 +9,8 @@ class Checkout extends React.Component {
             tel: '',
             payment: 'cash',
             deliveryCost: 0,
-            deliveryString: ''
+            deliveryString: '',
+            isDeliveryFree: false
         };
     }
 
@@ -19,6 +20,8 @@ class Checkout extends React.Component {
 
     componentDidUpdate(prevProps) {
         if(this.props.price !== prevProps.price) {
+            this._updateDeliveryData();
+        if (this.state.isDeliveryFree !== prevState.isDeliveryFree) {
             this._updateDeliveryData();
         }
     }
@@ -32,15 +35,26 @@ class Checkout extends React.Component {
         let target = e.target;
         const value = target.value;
         const name = target.tagName === 'OPTION' ? target.parentNode.name : target.name;
+        if(name === 'delivery') {
+            this._checkIfDeliveryIsFree(value);
+        }
         this.setState({
             [name]: value
         });
 
     }
 
+    _checkIfDeliveryIsFree(value) {
+        const isDeliveryFree = (value === 'pickup');
+        this.setState({
+            isDeliveryFree
+        });
+
+    }
     _updateDeliveryData() {
+        const isDeliveryFree = this.state.isDeliveryFree;
         let deliveryCost = this.props.shops.reduce((acc, shop) => {
-            let cost = shop.productsPrice >= shop.info.sumMinFreeDelivery ? 0 : shop.info.deliveryCost;
+            let cost = (shop.productsPrice >= shop.info.sumMinFreeDelivery || isDeliveryFree) ? 0 : shop.info.deliveryCost;
             return acc + cost;
         }, 0);
         let deliveryString = deliveryCost > 0 ? `${deliveryCost} руб.` : 'Бесплатно';
@@ -51,7 +65,6 @@ class Checkout extends React.Component {
     }
 
     render() {
-
         return (
             <form className="checkout cart__checkout" onSubmit={this.onSubmit}>
                 <h2 className="page-title-medium checkout__title">Оформление заказа</h2>
